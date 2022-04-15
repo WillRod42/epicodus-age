@@ -11,7 +11,7 @@ describe("age", () => {
   });
 
   test("It should return the age converted into Mercury years", () => {
-    expect(age.mercury()).toEqual(7);
+    expect(age.mercury()).toEqual(125);
   });
 });
 
