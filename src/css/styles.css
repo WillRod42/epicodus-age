@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(177, 106, 40);
+  color: rgb(37, 37, 37);
+  width: 80%;
+  margin: auto;
+}
+
+input, button, ul {
+  margin: 1em;
+  margin-left: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
