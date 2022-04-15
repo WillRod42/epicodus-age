@@ -14,6 +14,19 @@ function showAges(age) {
   return ageHTML + "</ul>";
 }
 
+function showExpectancy(lifeExpectancy, age) {
+  let expectancy = age.averageLifeExpectancy(lifeExpectancy);
+
+  let expectancyHTML = "<h3>Solar Life Expectancies:</h3><ul>";
+  expectancyHTML += `<li>Mercury Years: ${expectancy.mercury}</li>`;
+  expectancyHTML += `<li>Venus Years: ${expectancy.venus}</li>`;
+  expectancyHTML += `<li>Mars Years: ${expectancy.mars}</li>`;
+  expectancyHTML += `<li>Jupiter Years: ${expectancy.jupiter}</li>`;
+
+  return expectancyHTML + "</ul>";
+
+}
+
 $(document).ready(function() {
   $("form").on("submit", (e) => {
     e.preventDefault();
@@ -23,5 +36,11 @@ $(document).ready(function() {
 
     let ageList = showAges(age);
     output.append(ageList);
+
+    let lifeExpectancy = parseInt($("#life-expectancy").val());
+    if (lifeExpectancy > 0) {
+      let expectancyList = showExpectancy(lifeExpectancy, age);
+      output.append(expectancyList);
+    }
   });
 });
