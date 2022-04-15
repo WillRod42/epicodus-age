@@ -29,6 +29,11 @@ describe("age", () => {
   test("It should return an object with each life expectancy of each planet using the given life expectancy for Earth years", () => {
     expect(age.averageLifeExpectancy(80)).toEqual({"mercury": 208, "venus": 81, "mars": 27, "jupiter": 4});
   });
+
+  test("If they are older than their life expectancy, this should return the number of years they have lived past it", () => {
+    age = new Age(100);
+    expect(age.averageLifeExpectancy(80)).toEqual({"mercury": 83, "venus": 32, "mars": 11, "jupiter": 2});
+  });
 });
 
 /*
