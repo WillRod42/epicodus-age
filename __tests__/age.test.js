@@ -25,6 +25,10 @@ describe("age", () => {
   test("It should return the age converted into Jupiter years", () => {
     expect(age.jupiter()).toEqual(3);
   });
+
+  test("It should return an object with each life expectancy of each planet using the given life expectancy for Earth years", () => {
+    expect(age.averageLifeExpectancy(80)).toEqual({"mercury": 208, "venus": 81, "mars": 27, "jupiter": 4});
+  });
 });
 
 /*

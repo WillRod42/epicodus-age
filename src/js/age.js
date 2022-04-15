@@ -18,4 +18,8 @@ export default class Age {
   jupiter() {
     return parseInt((this.years / 11.86).toFixed(0));
   }
+
+  averageLifeExpectancy() {
+    
+  }
 }
