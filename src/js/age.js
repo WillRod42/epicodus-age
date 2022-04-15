@@ -14,4 +14,8 @@ export default class Age {
   mars() {
     return parseInt((this.years / 1.88).toFixed(0));
   }
+
+  jupiter() {
+    
+  }
 }

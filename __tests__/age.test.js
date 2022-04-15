@@ -21,6 +21,10 @@ describe("age", () => {
   test("It should return the age converted into Mars years", () => {
     expect(age.mars()).toEqual(16);
   });
+
+  test("It should return the age converted into Jupiter years", () => {
+    expect(age.jupiter()).toEqual(3);
+  });
 });
 
 /*
