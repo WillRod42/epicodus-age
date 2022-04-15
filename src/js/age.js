@@ -1,6 +1,11 @@
 export default class Age {
-  constructor(age) {
-    this.years = age;
+  constructor(age, dogYears) {
+    if (dogYears) {
+      this.years = age * 7;
+    } else {
+      this.years = age;
+    }
+    this.dogYears = dogYears;
   }
 
   mercury() {
@@ -20,10 +25,15 @@ export default class Age {
   }
 
   averageLifeExpectancy(lifeExpectancy) {
-    let mercuryLife = Math.abs((new Age(lifeExpectancy - this.years)).mercury());
-    let venusLife = Math.abs((new Age(lifeExpectancy - this.years)).venus());
-    let marsLife = Math.abs((new Age(lifeExpectancy - this.years)).mars());
-    let jupiterLife = Math.abs((new Age(lifeExpectancy - this.years)).jupiter());
+    let age = this.years;
+    if (this.dogYears) {
+      age /= 7;
+    }
+
+    let mercuryLife = Math.abs((new Age((lifeExpectancy - age), this.dogYears)).mercury());
+    let venusLife = Math.abs((new Age((lifeExpectancy - age), this.dogYears)).venus());
+    let marsLife = Math.abs((new Age((lifeExpectancy - age), this.dogYears)).mars());
+    let jupiterLife = Math.abs((new Age((lifeExpectancy - age), this.dogYears)).jupiter());
 
     return {"mercury": mercuryLife, "venus": venusLife, "mars": marsLife, "jupiter": jupiterLife};
   }
