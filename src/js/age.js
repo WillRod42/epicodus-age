@@ -10,4 +10,8 @@ export default class Age {
   venus() {
     return parseInt((this.years / 0.62).toFixed(0));
   }
+
+  mars() {
+
+  }
 }
