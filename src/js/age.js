@@ -19,7 +19,12 @@ export default class Age {
     return parseInt((this.years / 11.86).toFixed(0));
   }
 
-  averageLifeExpectancy() {
-    
+  averageLifeExpectancy(lifeExpectancy) {
+    let mercuryLife = (new Age(lifeExpectancy - this.years)).mercury();
+    let venusLife = (new Age(lifeExpectancy - this.years)).venus();
+    let marsLife = (new Age(lifeExpectancy - this.years)).mars();
+    let jupiterLife = (new Age(lifeExpectancy - this.years)).jupiter();
+
+    return {"mercury": mercuryLife, "venus": venusLife, "mars": marsLife, "jupiter": jupiterLife};
   }
 }
