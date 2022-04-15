@@ -30,7 +30,7 @@ function showExpectancy(lifeExpectancy, age) {
 $(document).ready(function() {
   $("form").on("submit", (e) => {
     e.preventDefault();
-    let age = new Age($("#age").val());
+    let age = new Age($("#age").val(), $("#dog-years").is(":checked"));
     let output = $("#output");
     output.empty();
 
